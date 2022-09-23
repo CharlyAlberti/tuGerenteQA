@@ -26,15 +26,17 @@ def run(playwright: Playwright) -> None:
     # Press Enter
     page.locator("[placeholder=\"Contraseña\"]").press("Enter")
     page.wait_for_url("https://erp.implementaconbubo.com/principal")
+    #STARTS Ventas2.py
+    # Click #root >> text=Módulo Punto de Venta
+    page.locator("#root >> text=Módulo Punto de Venta").click()
+    page.wait_for_url("https://pos.implementaconbubo.com/principal")
     page.wait_for_timeout(5000)#5 SECONDS
 
-    #STARTS Ventas2.py
-
-    # Click a:has-text("Ventas")
-    page.locator("a:has-text(\"Ventas\")").click()
-    page.wait_for_url("https://erp.implementaconbubo.com/pedido")
-    page.wait_for_timeout(5000)#5 SECONDS  
-    page.screenshot(path="ModuloVentas_Screenshot.png")
+    # Click text=Módulo Punto de Venta Vender >> button
+    page.locator("text=Módulo Punto de Venta Vender >> button").click()
+    page.wait_for_url("https://pos.implementaconbubo.com/venta")
+    page.wait_for_timeout(40000)#40 SECONDS
+    page.screenshot(path="Ventas2_Screenshot.png")
 
     context.close()
     browser.close()

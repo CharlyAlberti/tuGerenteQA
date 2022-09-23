@@ -42,8 +42,27 @@ def run(playwright: Playwright) -> None:
     # Click #ProdFav div >> nth=1
     page.locator("#ProdFav div").nth(1).click()
     #Bug En Favoritos!!!!!
-    page.screenshot(path="BUG_ModuloVentas3_Screenshot.png")
+    page.screenshot(path="ModuloVentas3_Screenshot.png")
 
+
+    #ModuloVentas4_AgregarProducto
+    # Click [id="\32 44997"] >> nth=0
+    page.locator("[id=\"\\32 44997\"]").first.click()
+    # Click [id="\32 47079"] >> nth=0
+    page.locator("[id=\"\\32 47079\"]").first.click()
+    # Click text=PISTOLA CAL22 WALTHER ALEMANIA P22 PPQ M2 -5100301 TACTIAL NEGRA
+    page.locator("text=PISTOLA CAL22 WALTHER ALEMANIA P22 PPQ M2 -5100301 TACTIAL NEGRA").click()
+    # Click text=PISTOLA CAL22 BERSA ARGENTINA MATE BLUE NIKEL Y NEGRO
+    page.locator("text=PISTOLA CAL22 BERSA ARGENTINA MATE BLUE NIKEL Y NEGRO").click()
+    # Click [id="\32 44509"] >> nth=0
+    page.locator("[id=\"\\32 44509\"]").first.click()
+    # Click [id="\32 45170"] >> nth=0
+    page.locator("[id=\"\\32 45170\"]").first.click()
+    # Click [id="\32 44978"] >> nth=0
+    page.locator("[id=\"\\32 44978\"]").first.click()
+    page.screenshot(path="ModuloVentas4_Screenshot.png")
+
+    
     context.close()
     browser.close()
 
